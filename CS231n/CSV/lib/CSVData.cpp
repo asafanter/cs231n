@@ -6,120 +6,102 @@
 #include "CSVData.h"
 
 CSVData::CSVData() :
-    _rows(),
-    _cols(),
+    _num_of_cols(0),
     _num_of_rows(0),
-    _num_of_cols(0)
+    _cols(nullptr),
+    _rows(nullptr),
+    _start_col(0),
+    _end_col(0),
+    _start_row(0),
+    _end_row(0)
 {
 
 }
 
-CSVData::CSVData(const string &file_name) :
-    _rows(),
-    _cols(),
-    _num_of_rows(0),
-    _num_of_cols(0)
+CSVData::CSVData(std::vector<std::vector<string> > *cols, std::vector<std::vector<string> > *rows,
+                 const uint32 &start_col, const uint32 &end_col,
+                 const uint32 &start_row, const uint32 &end_row) :
+    _num_of_cols(end_col - start_col + 1),
+    _num_of_rows(end_row - start_row + 1),
+    _cols(cols),
+    _rows(rows),
+    _start_col(start_col),
+    _end_col(end_col),
+    _start_row(start_row),
+    _end_row(end_row)
 {
-    read(file_name);
+
 }
 
-void CSVData::read(const string &file_name)
+string CSVData::getVal(const uint32 &row, const uint32 &col) const
 {
-    std::fstream in(file_name, std::ios::in);
-    if(!in.is_open())
+    if(row >= _num_of_rows || col >= _num_of_cols)
     {
-        std::cerr << "cannot open file: " << file_name << std::endl;
-        return;
+        std::cerr << "CSVData::getVal: invalid element index" << std::endl;
+        return string();
     }
 
-    string line;
-    while(in >> line)
-    {
-        auto row = splitString(line, ',');
-        if(_num_of_cols == 0)
-        {
-            _num_of_cols = row.size();
-            _cols.resize(_num_of_cols);
-        }
-        addRow(row);
-        for(uint32 i = 0; i < _num_of_cols; i++)
-        {
-            _cols[i].emplace_back(row[i]);
-        }
-        _num_of_rows++;
-    }
+    return (*_rows)[row + _start_row][col + _start_col];
 }
 
-void CSVData::addRow(const std::vector<string> &row)
+CSVData CSVData::getRow(const uint32 &row)
 {
-    if(row.size() != _num_of_cols)
+    if(!isRowValid(row))
     {
-        std::cerr << "row size mismatch!" << std::endl;
-        return;
+        return *this;
     }
 
-    _rows.emplace_back(row);
+    CSVData res(_cols, _rows, 0, _num_of_cols - 1, row, row);
+
+    return res;
 }
 
-const std::vector<string> &CSVData::getRow(const uint32 &i) const
+CSVData CSVData::getCol(const uint32 &col)
 {
-    if(i >= _num_of_rows)
+    if(!isColValid(col))
     {
-        throw "CSVData::getRow: invalid index";
+        return *this;
     }
 
-    return _rows[i];
+    CSVData res(_cols, _rows, col, col, 0, _num_of_rows - 1);
+
+    return res;
 }
 
-const std::vector<string> &CSVData::getCol(const uint32 &i) const
+bool CSVData::isRowValid(const uint32 &row) const
 {
-    if(i >= _num_of_cols)
+    if(row >= _num_of_rows)
     {
-        throw "CSVData::getCol: invalid index";
+        std::cerr << "CSVData::getRow: invalid row index" << std::endl;
+        return false;
     }
 
-    return _cols[i];
+    return true;
+}
+
+bool CSVData::isColValid(const uint32 &col) const
+{
+    if(col >= _num_of_cols)
+    {
+        std::cerr << "CSVData::getRow: invalid col index" << std::endl;
+        return false;
+    }
+
+    return true;
 }
 
 std::ostream &operator<<(std::ostream &out, const CSVData &data)
 {
-    for(auto &row : data._rows)
+
+    for(uint32 row = 0; row < data._num_of_rows; row++)
     {
-        for(auto &val : row)
+        for(uint32 col = 0; col < data._num_of_cols; col++)
         {
-            out << val << " ";
+            out << data.getVal(row, col) << " ";
         }
+
         out << std::endl;
     }
 
     return out;
-}
-
-std::vector<string> CSVData::splitString(const string &str, const char &delimiter)
-{
-    std::vector<string> res;
-
-    string token = "";
-    auto *data = str.data();
-
-    while(*data != '\0')
-    {
-        if(*data == delimiter)
-        {
-            res.emplace_back(token);
-            token.clear();
-        }
-        else
-        {
-            token.push_back(*data);
-        }
-        data++;
-    }
-
-    if(!token.empty())
-    {
-        res.emplace_back(token);
-    }
-
-    return res;
 }

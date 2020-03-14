@@ -9,10 +9,19 @@ public:
     CSV();
     void read(const string & file_name);
     void write(const CSVData &_data, const string &file_name);
-    CSVData getData() const {return _data;}
+    CSVData getData(const uint32 &from_col, const uint32 &to_col, const uint32 &from_row, const uint32 &to_row);
+
 
 private:
-    CSVData _data;
+    std::vector<string> splitString(const string &str, const char &delimiter);
+    void addRow(const std::vector<string> &row);
+    bool isInputValid(const uint32 &from_col, const uint32 &to_col, const uint32 &from_row, const uint32 &to_row) const;
+
+private:
+    std::vector<std::vector<string>> _rows;
+    std::vector<std::vector<string>> _cols;
+    uint32 _num_of_rows;
+    uint32 _num_of_cols;
 };
 
 #endif // CSV_H

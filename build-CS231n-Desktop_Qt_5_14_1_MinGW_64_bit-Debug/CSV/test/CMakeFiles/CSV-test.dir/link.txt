@@ -1,3 +1,0 @@
-C:\Qt\Tools\CMake_64\bin\cmake.exe -E remove -f CMakeFiles\CSV-test.dir/objects.a
-C:\Qt\Tools\mingw730_64\bin\ar.exe cr CMakeFiles\CSV-test.dir/objects.a @CMakeFiles\CSV-test.dir\objects1.rsp
-C:\Qt\Tools\mingw730_64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\CSV-test.dir/objects.a -Wl,--no-whole-archive  -o CSV-test.exe -Wl,--out-implib,libCSV-test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CSV-test.dir\linklibs.rsp

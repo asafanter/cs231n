@@ -6,22 +6,26 @@ class CSVData
 {
 public:
     CSVData();
-    CSVData(const string &file_name);
-    void read(const string &file_name);
-    void addRow(const std::vector<string> &row);
-    const std::vector<string> &getRow(const uint32 &i) const;
-    const std::vector<string> &getCol(const uint32 &i) const;
+    CSVData(std::vector<std::vector<string>> *cols, std::vector<std::vector<string>> *rows,
+            const uint32 &start_col, const uint32 &end_col,
+            const uint32 &start_row, const uint32 &end_row);
     friend std::ostream &operator<<(std::ostream &out, const CSVData &data);
-    uint32 getNumOfRows() const {return _num_of_rows;}
-    uint32 getNumOfCols() const {return _num_of_cols;}
+    string getVal(const uint32 &row, const uint32 &col) const;
+    CSVData getRow(const uint32 &row);
+    CSVData getCol(const uint32 &col);
 
 private:
-    std::vector<string> splitString(const string &str, const char &delimiter);
+    bool isRowValid(const uint32 &row) const;
+    bool isColValid(const uint32 &col) const;
 
 private:
-    std::vector<std::vector<string>> _rows;
-    std::vector<std::vector<string>> _cols;
-    uint32 _num_of_rows;
     uint32 _num_of_cols;
+    uint32 _num_of_rows;
+    std::vector<std::vector<string>> *_cols;
+    std::vector<std::vector<string>> *_rows;
+    uint32 _start_col;
+    uint32 _end_col;
+    uint32 _start_row;
+    uint32 _end_row;
 };
 

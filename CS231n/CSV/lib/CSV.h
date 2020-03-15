@@ -10,6 +10,7 @@ public:
     void read(const string & file_name);
     void write(const CSVData &_data, const string &file_name);
     CSVData getData(const uint32 &from_col, const uint32 &to_col, const uint32 &from_row, const uint32 &to_row);
+    CSVData getData();
 
 private:
     std::vector<string> splitString(const string &str, const char &delimiter);

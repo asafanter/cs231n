@@ -12,6 +12,8 @@ public:
     friend std::ostream &operator<<(std::ostream &out, const CSVData &data);
     const string &operator()(const uint32 &row, const uint32 &col) const;
     string &operator()(const uint32 &row, const uint32 &col);
+    const string &operator()(const uint32 &id) const;
+    string &operator()(const uint32 &id);
     CSVData getRow(const uint32 &row);
     CSVData getCol(const uint32 &col);
 

@@ -3,7 +3,11 @@
 
 #include "CSV.h"
 
-CSV::CSV()
+CSV::CSV() :
+    _rows(),
+    _cols(),
+    _num_of_rows(0),
+    _num_of_cols(0)
 {
 
 }
@@ -33,6 +37,10 @@ void CSV::read(const string &file_name)
             _cols[i].emplace_back(row[i]);
         }
         _num_of_rows++;
+        if(_num_of_rows == 10)
+        {
+            int koko = 7;
+        }
         line = readLine(in);
     }
 }
@@ -48,6 +56,11 @@ CSVData CSV::getData(const uint32 &from_col, const uint32 &to_col,
     CSVData res(&_cols, &_rows, from_col, to_col, from_row, to_row);
 
     return res;
+}
+
+CSVData CSV::getData()
+{
+    return getData(0, _num_of_cols - 1, 0, _num_of_rows - 1);
 }
 
 std::vector<string> CSV::splitString(const string &str, const char &delimiter)

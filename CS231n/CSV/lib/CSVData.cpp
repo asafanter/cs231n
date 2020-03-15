@@ -54,6 +54,40 @@ string &CSVData::operator()(const uint32 &row, const uint32 &col)
     return (*_rows)[row + _start_row][col + _start_col];
 }
 
+const string &CSVData::operator()(const uint32 &id) const
+{
+    if((_num_of_cols != 1 && _num_of_rows != 1) ||
+            (_num_of_cols == 1 && id >= _num_of_rows) ||
+            (_num_of_rows == 1 && id >= _num_of_cols))
+    {
+        throw CSVInvalidIndex();
+    }
+
+    if(_num_of_cols == 1)
+    {
+        return (*_rows)[id + _start_row][_start_col];
+    }
+
+    return (*_rows)[_start_row][id + _start_col];
+}
+
+string &CSVData::operator()(const uint32 &id)
+{
+    if((_num_of_cols != 1 && _num_of_rows != 1) ||
+            (_num_of_cols == 1 && id >= _num_of_rows) ||
+            (_num_of_rows == 1 && id >= _num_of_cols))
+    {
+        throw CSVInvalidIndex();
+    }
+
+    if(_num_of_cols == 1)
+    {
+        return (*_rows)[id + _start_row][_start_col];
+    }
+
+    return (*_rows)[_start_row][id + _start_col];
+}
+
 CSVData CSVData::getRow(const uint32 &row)
 {
     if(!isRowValid(row))

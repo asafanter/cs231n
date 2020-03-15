@@ -1,0 +1,10 @@
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/CMakeFiles/edit_cache.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/CMakeFiles/rebuild_cache.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/lib/CMakeFiles/rebuild_cache.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/lib/CMakeFiles/CSV-lib.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/lib/CMakeFiles/edit_cache.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/test/CMakeFiles/CSV-test.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/test/CMakeFiles/edit_cache.dir
+C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/CSV/test/CMakeFiles/rebuild_cache.dir

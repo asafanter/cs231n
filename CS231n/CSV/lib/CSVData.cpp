@@ -3,6 +3,7 @@
 #include <istream>
 #include <ostream>
 
+#include "CSVExceptions.h"
 #include "CSVData.h"
 
 CSVData::CSVData() :
@@ -33,12 +34,21 @@ CSVData::CSVData(std::vector<std::vector<string> > *cols, std::vector<std::vecto
 
 }
 
-string CSVData::getVal(const uint32 &row, const uint32 &col) const
+const string &CSVData::operator()(const uint32 &row, const uint32 &col) const
 {
     if(row >= _num_of_rows || col >= _num_of_cols)
     {
-        std::cerr << "CSVData::getVal: invalid element index" << std::endl;
-        return string();
+        throw CSVInvalidIndex();
+    }
+
+    return (*_rows)[row + _start_row][col + _start_col];
+}
+
+string &CSVData::operator()(const uint32 &row, const uint32 &col)
+{
+    if(row >= _num_of_rows || col >= _num_of_cols)
+    {
+        throw CSVInvalidIndex();
     }
 
     return (*_rows)[row + _start_row][col + _start_col];
@@ -97,7 +107,7 @@ std::ostream &operator<<(std::ostream &out, const CSVData &data)
     {
         for(uint32 col = 0; col < data._num_of_cols; col++)
         {
-            out << data.getVal(row, col) << " ";
+            out << data.operator()(row, col) << " ";
         }
 
         out << std::endl;

@@ -10,7 +10,8 @@ public:
             const uint32 &start_col, const uint32 &end_col,
             const uint32 &start_row, const uint32 &end_row);
     friend std::ostream &operator<<(std::ostream &out, const CSVData &data);
-    string getVal(const uint32 &row, const uint32 &col) const;
+    const string &operator()(const uint32 &row, const uint32 &col) const;
+    string &operator()(const uint32 &row, const uint32 &col);
     CSVData getRow(const uint32 &row);
     CSVData getCol(const uint32 &col);
 

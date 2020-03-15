@@ -2,16 +2,17 @@
 
 #include "CSV.h"
 
-
 int main()
 {
     CSV csv;
-    csv.read("C:/Users/asafa/Desktop/data.txt");
+    csv.read("C:/Users/asafa/Desktop/hotel_bookings.csv");
 
-    auto data = csv.getData(0, 2, 0, 2);
-    auto row = data.getCol(1);
+    auto data = csv.getData(0, 31, 0, 31);
+    auto row = data.getRow(1);
 
-    std::cout << row << std::endl;
+    row(0, 2) = "asaf";
+
+    std::cout << row(0, 2) << std::endl;
 
     return 0;
 }

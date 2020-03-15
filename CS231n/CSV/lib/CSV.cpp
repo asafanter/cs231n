@@ -17,8 +17,9 @@ void CSV::read(const string &file_name)
         return;
     }
 
-    string line;
-    while(in >> line)
+    string line = readLine(in);
+
+    while(!line.empty())
     {
         auto row = splitString(line, ',');
         if(_num_of_cols == 0)
@@ -32,6 +33,7 @@ void CSV::read(const string &file_name)
             _cols[i].emplace_back(row[i]);
         }
         _num_of_rows++;
+        line = readLine(in);
     }
 }
 
@@ -104,4 +106,25 @@ bool CSV::isInputValid(const uint32 &from_col, const uint32 &to_col, const uint3
     }
 
     return true;
+}
+
+string CSV::readLine(std::fstream &file)
+{
+    string res = "";
+
+    char ch = '\0';
+    while(ch != '\n')
+    {
+        file.read(&ch, 1);
+        if(ch == '\0')
+        {
+            break;
+        }
+        else if(ch != '\n')
+        {
+            res.push_back(ch);
+        }
+    }
+
+    return res;
 }

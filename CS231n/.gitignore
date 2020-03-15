@@ -72,4 +72,6 @@ Thumbs.db
 *.exe
 
 ../build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/
+build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/
+./../build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/
 

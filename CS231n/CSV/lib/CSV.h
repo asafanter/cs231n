@@ -1,7 +1,7 @@
-#ifndef CSV_H
-#define CSV_H
+#pragma once
 
 #include "CSVData.h"
+#include "../../types.h"
 
 class CSV
 {
@@ -25,4 +25,3 @@ private:
     uint32 _num_of_cols;
 };
 
-#endif // CSV_H

@@ -2,7 +2,7 @@
 
 #include <exception>
 
-#include "types.h"
+#include "../../types.h"
 
 class CSVException : public std::exception
 {

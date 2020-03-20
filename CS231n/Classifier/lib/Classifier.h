@@ -15,7 +15,9 @@ public:
 
     static DataSet createDataSet(const std::vector<Image> &images);
 //    void train(const Dataset &data_set) = 0;
-//    Image::Label predict(const Image &image) = 0;
+    std::vector<Image::Label> predict(const std::vector<Image> &images);
+    virtual Image::Label predict(const Image &image) = 0;
+
 
 private:
     static std::vector<Image> sampleRandomly(std::vector<Image> &images, const uint32 &num);

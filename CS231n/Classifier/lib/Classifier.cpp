@@ -16,6 +16,17 @@ Classifier::DataSet Classifier::createDataSet(const std::vector<Image> &images)
     return res;
 }
 
+std::vector<Image::Label> Classifier::predict(const std::vector<Image> &images)
+{
+    std::vector<Image::Label> res;
+    for(auto &image : images)
+    {
+        res.emplace_back(predict(image));
+    }
+
+    return res;
+}
+
 std::vector<Image> Classifier::sampleRandomly(std::vector<Image> &images, const uint32 &num)
 {
     std::vector<Image> res;

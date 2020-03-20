@@ -18,8 +18,10 @@ public:
     void setLossFunction(const LostFunction &new_loss_function) {_loss_function = new_loss_function;}
 
 private:
+    static constexpr real64 DELTA = 1.0;
+
     void init();
-    real64 calcLoss(const cv::Mat &x, const Image::Label &correct_label);
+    cv::Mat calcLoss(const std::vector<Image> &images);
     void initW(const uint32 &rows, const uint32 &cols);
 
 private:

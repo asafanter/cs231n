@@ -27,7 +27,7 @@ int main()
 
 //    std::cout << knn.calcAccuracy(data_set.test) << "%" << std::endl;
 
-    SVM svm;
+    SVM svm(10);
     svm.train(data_set.train);
 
     return 0;

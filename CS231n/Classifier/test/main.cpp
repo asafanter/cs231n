@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Classifier.h"
+#include "KNN.h"
 #include "ImageIterator.h"
 
 int main()
@@ -15,10 +16,14 @@ int main()
         images.emplace_back(image);
     }
 
-    Classifier::DataSet data_Set = Classifier::createDataSet(images);
+    Classifier::DataSet data_set = Classifier::createDataSet(images);
 
-    std::cout << static_cast<int>(data_Set.train[3].getLabel()) << std::endl;
-    data_Set.train[3].show();
+    Image test_image = data_set.train[0];
+
+    KNN knn(10);
+    knn.train(data_set.train);
+
+    std::cout << knn.calcAccuracy(data_set.test) << "%" << std::endl;
 
     return 0;
 }

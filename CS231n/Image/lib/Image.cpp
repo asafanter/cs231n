@@ -29,6 +29,11 @@ Image::Image(const string &path) :
     _data = cv::imread(path);
 }
 
+real64 Image::distFrom(const Image &other)
+{
+    return cv::norm(_data, other._data);
+}
+
 void Image::read(const string &path)
 {
     _data = cv::imread(path);

@@ -15,17 +15,17 @@ public:
     const std::vector<Image> &getData() const {return _data;}
     virtual Image::Label predict(const Image &image) override;
     virtual void train(const std::vector<Image> &data) override;
-    static real64 l1Dist(const Image &image1, const Image &image2);
 
 private:
     struct Grade
     {
         Image::Label label;
         real64 dist;
-    }
+    };
 
-    std::vector<Grade> calcDistfromImages(const Image &image);
+    std::vector<Grade> calcDistFromImages(const Image &image);
     Image::Label vote(const std::vector<Grade> &grades);
+    real64 l2Dist(const Image &image1, const Image &image2);
 
 private:
     std::vector<Image> _data;

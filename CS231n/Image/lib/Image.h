@@ -11,6 +11,7 @@ class Image
 public:
 
     using Color = cv::Vec3b;
+    static constexpr uint32 NUM_OF_CLASSES = 10;
     enum class Label
     {
         AIRPLANE,

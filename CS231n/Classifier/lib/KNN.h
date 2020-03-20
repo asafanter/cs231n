@@ -18,6 +18,16 @@ public:
     static real64 l1Dist(const Image &image1, const Image &image2);
 
 private:
+    struct Grade
+    {
+        Image::Label label;
+        real64 dist;
+    }
+
+    std::vector<Grade> calcDistfromImages(const Image &image);
+    Image::Label vote(const std::vector<Grade> &grades);
+
+private:
     std::vector<Image> _data;
     uint32 _num_of_neighbors;
 };

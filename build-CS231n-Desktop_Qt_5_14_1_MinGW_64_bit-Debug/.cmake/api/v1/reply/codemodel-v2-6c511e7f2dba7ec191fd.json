@@ -1,0 +1,302 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						4,
+						7,
+						10
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "CSV",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "CSV"
+				},
+				{
+					"build" : "CSV/lib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "CSV/lib",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "CSV/test",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "CSV/test",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "Image",
+					"childIndexes" : 
+					[
+						5,
+						6
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Image"
+				},
+				{
+					"build" : "Image/lib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 0,
+					"source" : "Image/lib",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "Image/test",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 0,
+					"source" : "Image/test",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "ImageIterator",
+					"childIndexes" : 
+					[
+						8,
+						9
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "ImageIterator"
+				},
+				{
+					"build" : "ImageIterator/lib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 0,
+					"source" : "ImageIterator/lib",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "ImageIterator/test",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 0,
+					"source" : "ImageIterator/test",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "Classifier",
+					"childIndexes" : 
+					[
+						11,
+						12
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Classifier"
+				},
+				{
+					"build" : "Classifier/lib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 0,
+					"source" : "Classifier/lib",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "Classifier/test",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 0,
+					"source" : "Classifier/test",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					],
+					"name" : "CS231n",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "CSV-lib::@8290e8e75cbc45ca7ba5",
+					"jsonFile" : "target-CSV-lib-Debug-b10a22101132f4e4be49.json",
+					"name" : "CSV-lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "CSV-test::@b170de3636fbe7c64966",
+					"jsonFile" : "target-CSV-test-Debug-735bdf4e13d6f0141697.json",
+					"name" : "CSV-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "Classifier-lib::@6db90416b16dc0cc7a6a",
+					"jsonFile" : "target-Classifier-lib-Debug-3b215ceb5c8df5d8ff08.json",
+					"name" : "Classifier-lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "Classifier-test::@93e414e712689ec70c4f",
+					"jsonFile" : "target-Classifier-test-Debug-eb2097e8d633eec9784e.json",
+					"name" : "Classifier-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "Image-lib::@de0cc0678f3940713781",
+					"jsonFile" : "target-Image-lib-Debug-def0721064b6b15038f8.json",
+					"name" : "Image-lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "Image-test::@456ba5379cdcd13891ef",
+					"jsonFile" : "target-Image-test-Debug-31a0c1152959338d8d4b.json",
+					"name" : "Image-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "ImageIterator-lib::@d2e6465e36af0ba1f2aa",
+					"jsonFile" : "target-ImageIterator-lib-Debug-c371a484531756f87730.json",
+					"name" : "ImageIterator-lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "ImageIterator-test::@4e222e483252ae4a0c1b",
+					"jsonFile" : "target-ImageIterator-test-Debug-57abc432272d3f03c73d.json",
+					"name" : "ImageIterator-test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/asafa/Desktop/anter/projects/build-CS231n-Desktop_Qt_5_14_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/asafa/Desktop/anter/projects/CS231n"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

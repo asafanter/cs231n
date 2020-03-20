@@ -1,0 +1,2 @@
+C:\Qt\Tools\mingw730_64\bin\ar.exe qc libClassifier-lib.a  CMakeFiles/Classifier-lib.dir/Classifier.cpp.obj CMakeFiles/Classifier-lib.dir/KNN.cpp.obj
+C:\Qt\Tools\mingw730_64\bin\ranlib.exe libClassifier-lib.a

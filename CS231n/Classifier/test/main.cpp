@@ -2,6 +2,7 @@
 
 #include "Classifier.h"
 #include "KNN.h"
+#include "SVM.h"
 #include "ImageIterator.h"
 
 int main()
@@ -18,13 +19,16 @@ int main()
 
     Classifier::DataSet data_set = Classifier::createDataSet(images);
 
-    Image test_image = data_set.train[0];
-    test_image.resize(10, 10);
+//    Image test_image = data_set.train[0];
+//    test_image.resize(10, 10);
 
-    KNN knn(5);
-    knn.train(data_set.train);
+//    KNN knn(5);
+//    knn.train(data_set.train);
 
-    std::cout << knn.calcAccuracy(data_set.test) << "%" << std::endl;
+//    std::cout << knn.calcAccuracy(data_set.test) << "%" << std::endl;
+
+    SVM svm;
+    svm.train(data_set.train);
 
     return 0;
 }

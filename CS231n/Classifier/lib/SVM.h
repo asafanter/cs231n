@@ -10,18 +10,21 @@ class SVM : public Classifier
 {
 public:
 
-    using LostFunction = std::function<cv::Mat(const cv::Mat& W, const std::vector<Image>& image)>;
+    using LostFunction = std::function<real64(const cv::Mat& x, const Image::Label &correct_label)>;
 
-    SVM();
+    explicit SVM(const uint32 &num_of_classes = 0);
     virtual Image::Label predict(const Image &image);
     virtual void train(const std::vector<Image> &data);
-    void setLostFunction(const LostFunction &new_lost_function) {_lost_function = new_lost_function;}
+    void setLossFunction(const LostFunction &new_loss_function) {_loss_function = new_loss_function;}
 
 private:
     void init();
+    real64 calcLoss(const cv::Mat &x, const Image::Label &correct_label);
 
 private:
-    LostFunction _lost_function;
+    LostFunction _loss_function;
+    cv::Mat _w;
+    uint32 _num_of_classes;
 };
 
 #endif // SVM_H

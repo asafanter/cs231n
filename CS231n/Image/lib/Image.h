@@ -43,6 +43,7 @@ public:
     Label getLabel() const {return _label;}
     bool isEmpty() const {return _data.empty();}
     const cv::Mat getData() const {return _data;}
+    uint32 getSize() const {return _data.rows * _data.cols * _data.channels();}
     void show();
 
 private:

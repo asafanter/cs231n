@@ -13,13 +13,14 @@ Image::Image(const uint32 &width, const uint32 &height, uint8 *data) :
     _data(),
     _label(Label::NONE)
 {
-    cv::Mat channel_r(height, width, CV_8UC1, data);
-    cv::Mat channel_g(height, width, CV_8UC1, data + width * height);
-    cv::Mat channel_b(height, width, CV_8UC1, data + 2 * width * height);
+    cv::Mat channel_r(height, width, CV_8U, data);
+    cv::Mat channel_g(height, width, CV_8U, data + width * height);
+    cv::Mat channel_b(height, width, CV_8U, data + 2 * width * height);
 
     std::vector<cv::Mat> channels{ channel_b, channel_g, channel_r };
 
     merge(channels, _data);
+    _data.convertTo(_data, CV_64F);
 }
 
 Image::Image(const string &path) :

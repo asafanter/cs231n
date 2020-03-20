@@ -6,36 +6,6 @@
 
 #include "../../types.h"
 
-//    auto w = image.size().width;
-//    auto h = image.size().height;
-
-//    for(int row = 0; row < h; row++)
-//    {
-//        for(int col = 0; col < w; col++)
-//        {
-//            Vec3b color = image.at<Vec3b>(Point(col, row));
-//            color *= 0.5;
-//            image.at<Vec3b>(Point(col, row)) = color;
-
-//        }
-//    }
-//    for(int i=0; i<20;i++)
-//    {
-//        image.at<Vec3b>(Point(0, i)) = 0;
-//    }
-
-
-
-//    if(image.empty())
-//    {
-//        std::cerr << "cannot find image" << std::endl;
-//        return 0;
-//    }
-
-//    namedWindow("image");
-//    imshow("image1", image);
-//    waitKey(0);
-
 class Image
 {
 public:

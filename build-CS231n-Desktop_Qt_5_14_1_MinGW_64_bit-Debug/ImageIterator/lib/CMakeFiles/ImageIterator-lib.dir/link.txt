@@ -1,2 +1,0 @@
-C:\Qt\Tools\mingw730_64\bin\ar.exe qc libImageIterator-lib.a  CMakeFiles/ImageIterator-lib.dir/ImageIterator.cpp.obj
-C:\Qt\Tools\mingw730_64\bin\ranlib.exe libImageIterator-lib.a

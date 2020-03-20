@@ -1,2 +1,0 @@
-C:\Qt\Tools\mingw730_64\bin\ar.exe qc libImage-lib.a  CMakeFiles/Image-lib.dir/Image.cpp.obj
-C:\Qt\Tools\mingw730_64\bin\ranlib.exe libImage-lib.a

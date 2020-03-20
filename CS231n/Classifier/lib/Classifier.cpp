@@ -27,6 +27,20 @@ std::vector<Image::Label> Classifier::predict(const std::vector<Image> &images)
     return res;
 }
 
+real64 Classifier::calcAccuracy(const std::vector<Image> &test_set)
+{
+    uint32 true_positive_counter = 0;
+    for(auto &image : test_set)
+    {
+        if(image.getLabel() == predict(image))
+        {
+            true_positive_counter++;
+        }
+    }
+
+    return true_positive_counter / test_set.size();
+}
+
 std::vector<Image> Classifier::sampleRandomly(std::vector<Image> &images, const uint32 &num)
 {
     std::vector<Image> res;

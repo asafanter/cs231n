@@ -15,8 +15,7 @@ Image::Label SVM::predict(const Image &image)
 
 void SVM::train(const std::vector<Image> &data)
 {
-    _w = cv::Mat(_num_of_classes, data[0].getSize(), CV_64F);
-    cv::randu(_w, 0, 1);
+    initW(_num_of_classes, data[0].getSize());
 
     for(auto &image : data)
     {
@@ -48,4 +47,10 @@ void SVM::init()
 real64 SVM::calcLoss(const cv::Mat &x, const Image::Label &correct_label)
 {
     return _loss_function(x, correct_label);
+}
+
+void SVM::initW(const uint32 &rows, const uint32 &cols)
+{
+    _w = cv::Mat(rows, cols, CV_64F);
+    cv::randu(_w, 0, 1);
 }

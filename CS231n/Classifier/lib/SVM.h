@@ -20,6 +20,7 @@ public:
 private:
     void init();
     real64 calcLoss(const cv::Mat &x, const Image::Label &correct_label);
+    void initW(const uint32 &rows, const uint32 &cols);
 
 private:
     LostFunction _loss_function;

@@ -40,7 +40,7 @@ void Image::read(const string &path)
 }
 
 Image Image::resize(const uint32 &new_width, const uint32 &new_height)
-{
+{   
     Image res;
     cv::resize(_data, res._data, cv::Size(new_width, new_height));
 
